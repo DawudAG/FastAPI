@@ -1,3 +1,4 @@
+from typing import Literal
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 
@@ -43,3 +44,8 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: str
+
+
+class Vote(BaseModel):
+    post_id: int
+    dir: Literal[0, 1]
